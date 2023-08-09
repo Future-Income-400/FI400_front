@@ -8,33 +8,26 @@ import React from 'react';
 import LoginButton from './Component/LoginButton';
 import {
   StyleSheet,
+  Alert,
+  View,
 } from 'react-native';
 
 function App(): JSX.Element {
+  const kakaoImagePath = '../Image/kakao_login_large_wide.png'
+
+  const kakaoButtonPress = () => {
+    // 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
+    Alert.alert('버튼 잘 작동');
+  }
+
   return (
-    <>
-      <LoginButton />
-    </>
+    <View>
+      <LoginButton
+        onPress={kakaoButtonPress}
+        style={{ marginTop: 900 ,width: 250, height: 62, resizeMode: 'contain' }}
+      />
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
