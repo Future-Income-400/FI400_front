@@ -12,7 +12,7 @@ const LoginButton: React.FC<LoginButtonProps> = ({ onPress, style}) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={onPress} style={style}>
+      <TouchableOpacity testID='login-button' onPress={onPress} style={style}>
         <Image
           source={require('../Image/kakao_login_large_wide.png')}
           style={styles.LoginButton}
