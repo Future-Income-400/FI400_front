@@ -45,7 +45,7 @@ function App(): JSX.Element {
           imageSource={instaImagePath}
           onPress={instaButtonPress}
           style={{
-            marginTop: 1100,
+            marginTop: 1150,
             width: 250,
             height: 62,
             resizeMode: 'contain'
@@ -59,19 +59,12 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    resizeMode: 'cover', // 이미지를 화면에 맞게 늘리거나 축소
+    resizeMode: 'cover',
   },
   contentContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // 다른 컴포넌트를 중앙에 배치하고 싶다면 여기에 스타일을 추가할 수 있습니다
-  },
-  loginButton: {
-    marginTop: 20,
-    width: 250,
-    height: 62,
-    resizeMode: 'contain',
   },
 });
 
