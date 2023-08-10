@@ -10,31 +10,69 @@ import {
   StyleSheet,
   Alert,
   View,
+  ImageBackground,
 } from 'react-native';
 
 function App(): JSX.Element {
-  // 카카오 원본 이미지 파일의 Raw 경로
-  const kakaoImagePath = 'https://raw.githubusercontent.com/Future-Income-400/FI400_front/8018164c45e51f6415602ac74bd375492e29e2b7/FI400_front/GlassBottleLetter/Image/kakao_login_large_wide.png';
+  // 카카오 로그인 버튼 이미지 파일의 Raw 경로
+  const kakaoImagePath = 'https://raw.githubusercontent.com/Future-Income-400/FI400_front/master/FI400_front/GlassBottleLetter/Image/kakao_login_large_wide.png';
+  // 인스타 로그인 버튼 이미지 파일의 Raw 경로
+  const instaImagePath = 'https://raw.githubusercontent.com/Future-Income-400/FI400_front/master/FI400_front/GlassBottleLetter/Image/instagram_login_large_wide.png';
 
   const kakaoButtonPress = () => {
-    // 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
-    Alert.alert('버튼 잘 작동');
+    // 카카오 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
+    Alert.alert('카카오버튼 잘 작동');
+  }
+  const instaButtonPress = () => {
+    // 인스타 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
+    Alert.alert('인스타버튼 잘 작동');
   }
 
   return (
-    <View>
-      <LoginButton
-        imageSource={kakaoImagePath}
-        onPress={kakaoButtonPress}
-        style={{
-          marginTop: 900,
-          width: 250,
-          height: 62,
-          resizeMode: 'contain'
-        }}
-      />
-    </View>
+    <ImageBackground source={require('./Image/loginPage_background.png')} style={styles.container}>
+      <View>
+        <LoginButton
+          imageSource={kakaoImagePath}
+          onPress={kakaoButtonPress}
+          style={{
+            marginTop: 1000,
+            width: 250,
+            height: 62,
+            resizeMode: 'contain'
+          }}
+        />
+        <LoginButton
+          imageSource={instaImagePath}
+          onPress={instaButtonPress}
+          style={{
+            marginTop: 1100,
+            width: 250,
+            height: 62,
+            resizeMode: 'contain'
+          }}
+        />
+      </View>
+    </ImageBackground>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    resizeMode: 'cover', // 이미지를 화면에 맞게 늘리거나 축소
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // 다른 컴포넌트를 중앙에 배치하고 싶다면 여기에 스타일을 추가할 수 있습니다
+  },
+  loginButton: {
+    marginTop: 20,
+    width: 250,
+    height: 62,
+    resizeMode: 'contain',
+  },
+});
 
 export default App;
