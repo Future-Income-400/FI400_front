@@ -13,7 +13,8 @@ import {
 } from 'react-native';
 
 function App(): JSX.Element {
-  const kakaoImagePath = '../Image/kakao_login_large_wide.png'
+  // 카카오 원본 이미지 파일의 Raw 경로
+  const kakaoImagePath = 'https://raw.githubusercontent.com/Future-Income-400/FI400_front/8018164c45e51f6415602ac74bd375492e29e2b7/FI400_front/GlassBottleLetter/Image/kakao_login_large_wide.png';
 
   const kakaoButtonPress = () => {
     // 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
@@ -23,8 +24,14 @@ function App(): JSX.Element {
   return (
     <View>
       <LoginButton
+        imageSource={kakaoImagePath}
         onPress={kakaoButtonPress}
-        style={{ marginTop: 900 ,width: 250, height: 62, resizeMode: 'contain' }}
+        style={{
+          marginTop: 900,
+          width: 250,
+          height: 62,
+          resizeMode: 'contain'
+        }}
       />
     </View>
   );

@@ -3,18 +3,18 @@ import React from 'react';
 import { Image, ImageStyle, StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 
 interface LoginButtonProps {
-  // imageSource: string;
+  imageSource: string;
   onPress?: () => void;
   style?: ImageStyle & ViewStyle;
 }
 
-const LoginButton: React.FC<LoginButtonProps> = ({ onPress, style}) => {
+const LoginButton: React.FC<LoginButtonProps> = ({ onPress, style, imageSource}) => {
 
   return (
     <View style={styles.container}>
       <TouchableOpacity testID='login-button' onPress={onPress} style={style}>
         <Image
-          source={require('../Image/kakao_login_large_wide.png')}
+          source={{ uri:imageSource }}
           style={styles.LoginButton}
         />
       </TouchableOpacity>
