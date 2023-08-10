@@ -6,6 +6,7 @@
  */
 import React from 'react';
 import LoginButton from './Component/LoginButton';
+import HamburgerMenu from './Component/HamburgerMenu';
 import {StyleSheet, Alert, View, ImageBackground} from 'react-native';
 
 function App(): JSX.Element {
@@ -29,7 +30,9 @@ function App(): JSX.Element {
     <ImageBackground
       source={require('./Image/loginPage_background.png')}
       style={styles.container}>
+      {/* <HamburgerMenu /> */}
       <View>
+        <HamburgerMenu />
         <LoginButton
           imageSource={kakaoImagePath}
           onPress={kakaoButtonPress}
