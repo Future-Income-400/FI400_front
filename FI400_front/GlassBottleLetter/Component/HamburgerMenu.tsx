@@ -1,5 +1,3 @@
-//햄벅 메뉴 컴퓨넌트
-
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
@@ -12,7 +10,7 @@ const HamburgerMenu = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.menuContainerclose}>
+      <View style={styles.menuContainer}>
         <TouchableOpacity onPress={toggleMenu} style={styles.menuButton}>
           <Text style={styles.menuButtonText}>☰</Text>
         </TouchableOpacity>
@@ -37,16 +35,10 @@ const HamburgerMenu = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
   },
-  menuContainerclose: {
-    flex: 1,
-    height: '10%',
-    backgroundColor: '#9AC5F4',
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    flexDirection: 'row-reverse',
+  menuContainer: {
+    position: 'relative',
   },
   menuButton: {
     padding: 10,
@@ -55,14 +47,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   menu: {
+    top: 0,
+    left: 0,
     width: 240,
+    backgroundColor: '#99DBF5',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    marginTop: 5,
   },
   menuItem: {
-    backgroundColor: '#99DBF5',
-    padding: 20,
+    padding: 10,
     borderBottomWidth: 1,
     borderColor: '#ccc',
-    justifyContent: 'space-around',
   },
 });
 

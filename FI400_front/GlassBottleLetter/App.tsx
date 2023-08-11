@@ -30,9 +30,8 @@ function App(): JSX.Element {
     <ImageBackground
       source={require('./Image/loginPage_background.png')}
       style={styles.container}>
-      {/* <HamburgerMenu /> */}
+      <HamburgerMenu />
       <View>
-        <HamburgerMenu />
         <LoginButton
           imageSource={kakaoImagePath}
           onPress={kakaoButtonPress}
