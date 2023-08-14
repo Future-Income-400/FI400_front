@@ -42,14 +42,15 @@ const styles = StyleSheet.create({
   },
   menuButton: {
     padding: 10,
+    marginLeft: 'auto',
   },
   menuButtonText: {
-    fontSize: 20,
+    fontSize: 30,
   },
   menu: {
     top: 0,
     left: 0,
-    width: 240,
+    width: 200,
     backgroundColor: '#99DBF5',
     borderWidth: 1,
     borderColor: '#ccc',
