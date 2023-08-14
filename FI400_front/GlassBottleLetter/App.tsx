@@ -2,13 +2,13 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 
 // Routing 관련 Libreary
-import "react-native-gesture-handler";
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
 // Screen import
-import LoginScreen from './Screen/Login/Index';
-import MainScreen from './Screen/Main/Index';
+import LoginScreen from './Screen/Login/LoginScreen';
+import MainScreen from './Screen/Main/MainScreen';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +21,7 @@ function App(): JSX.Element {
       </Stack.Navigator>
     </NavigationContainer>
   );
-  
+
   // );
 }
 
