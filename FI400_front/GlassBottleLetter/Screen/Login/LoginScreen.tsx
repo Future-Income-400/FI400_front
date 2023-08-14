@@ -3,7 +3,6 @@ import LoginButton from '../../Component/LoginButton';
 import {StyleSheet, Alert, View, ImageBackground} from 'react-native';
 import HamburgerMenu from '../../Component/HamburgerMenu';
 
-
 // LoginScreen.
 const Index = ({navigation}: any) => {
   // 카카오 로그인 버튼 이미지 파일의 Raw 경로
@@ -16,7 +15,7 @@ const Index = ({navigation}: any) => {
   const kakaoButtonPress = () => {
     // 카카오 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
     // Alert.alert('카카오버튼 잘 작동');
-    navigation.navigate("MainScreen");
+    navigation.navigate('MainScreen');
   };
   const instaButtonPress = () => {
     // 인스타 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
@@ -52,7 +51,7 @@ const Index = ({navigation}: any) => {
       </View>
     </ImageBackground>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
