@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, Button, StyleSheet} from 'react-native';
 import HamburgerMenu from '../../Component/HamburgerMenu';
-
+import BottleLetter from '../../Component/BottleLetter';
 // MainScreen.
-const Index = ({navigation}: any) => {
+const MainScreen = ({navigation}: any) => {
   return (
     <View style={styles.container}>
+      <BottleLetter />
       <HamburgerMenu />
       <Button
         title="LoginScreen으로 이동"
@@ -23,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Index;
+export default MainScreen;
