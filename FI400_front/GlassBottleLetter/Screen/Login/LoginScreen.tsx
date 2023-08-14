@@ -1,7 +1,6 @@
 import React from 'react';
 import LoginButton from '../../Component/LoginButton';
 import {StyleSheet, Alert, View, ImageBackground} from 'react-native';
-import HamburgerMenu from '../../Component/HamburgerMenu';
 
 // LoginScreen.
 const Index = ({navigation}: any) => {
@@ -26,13 +25,12 @@ const Index = ({navigation}: any) => {
     <ImageBackground
       source={require('../../Image/loginPage_background.png')}
       style={styles.container}>
-      <HamburgerMenu />
       <View>
         <LoginButton
           imageSource={kakaoImagePath}
           onPress={kakaoButtonPress}
           style={{
-            marginBottom: 250,
+            marginTop: 900,
             width: 250,
             height: 62,
             resizeMode: 'contain',
@@ -42,7 +40,7 @@ const Index = ({navigation}: any) => {
           imageSource={instaImagePath}
           onPress={instaButtonPress}
           style={{
-            marginBottom: 230,
+            marginTop: 920,
             width: 250,
             height: 62,
             resizeMode: 'contain',
