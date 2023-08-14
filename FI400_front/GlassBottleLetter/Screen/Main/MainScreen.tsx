@@ -4,7 +4,7 @@ import HamburgerMenu from '../../Component/HamburgerMenu';
 import BackpackMenu from '../../Component/BackpackMenu';
 
 // MainScreen.
-const Index = ({navigation}: any) => {
+const MainScreen = ({navigation}: any) => {
   return (
     <ImageBackground
       source={require('../../Image/mainPage_background.png')}
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Index;
+export default MainScreen;

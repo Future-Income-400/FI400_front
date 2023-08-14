@@ -3,7 +3,7 @@ import LoginButton from '../../Component/LoginButton';
 import {StyleSheet, Alert, View, ImageBackground} from 'react-native';
 
 // LoginScreen.
-const Index = ({navigation}: any) => {
+const LoginScreen = ({navigation}: any) => {
   // 카카오 로그인 버튼 이미지 파일의 Raw 경로
   const kakaoImagePath =
     'https://raw.githubusercontent.com/Future-Income-400/FI400_front/master/FI400_front/GlassBottleLetter/Image/kakao_login_large_wide.png';
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Index;
+export default LoginScreen;
