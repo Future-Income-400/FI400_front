@@ -8,6 +8,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 // Screen import
 import LoginScreen from './Screen/Login/LoginScreen';
+import Redirection from './Screen/Login/Redirection';
 import MainScreen from './Screen/Main/MainScreen';
 import InboxScreen from './Screen/Main/Inbox';
 import SentLetterScreen from './Screen/Main/SentLetter';
@@ -20,6 +21,7 @@ function App(): JSX.Element {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="LoginScreen">
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen name="Redirection" component={Redirection} />
         <Stack.Screen name="MainScreen" component={MainScreen} />
         <Stack.Screen name="InboxScreen" component={InboxScreen} />
         <Stack.Screen name="SentLetterScreen" component={SentLetterScreen} />
