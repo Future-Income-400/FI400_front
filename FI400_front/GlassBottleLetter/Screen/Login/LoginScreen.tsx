@@ -35,7 +35,7 @@ var keyHash = Utility.getKeyHash(this)
 
   const kakaoButtonPress = async () => {
     try {
-      const response = await Axios.get(`/info/oauth2/kakao/client-id`);
+      const response = await Axios.get(`/info/oauth2/kakao/client-id`); // 링크 들어가야 됨
       const loginUrl = response.data.uri;
     } catch (err) {
       console.error('err', err);
