@@ -33,14 +33,13 @@ import com.kakao.sdk.common.util.Utility
 var keyHash = Utility.getKeyHash(this)
 */
 
-  const kakaoButtonPress = () => {
-    const kakaoLogin = async () => {
-      try {
-        const response = await Axios.get(`https://`);
-      } catch (err) {
-        console.error('err', err);
-      }
-    };
+  const kakaoButtonPress = async () => {
+    try {
+      const response = await Axios.get(`/info/oauth2/kakao/client-id`);
+      const loginUrl = response.data.uri;
+    } catch (err) {
+      console.error('err', err);
+    }
     // 카카오 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
     // Alert.alert('카카오버튼 잘 작동');
   };
