@@ -8,7 +8,6 @@ import {
   Linking,
   Text,
 } from 'react-native';
-import {Axios} from '../../Apis/ApiService';
 
 // LoginScreen.
 const LoginScreen = ({navigation, route}: any) => {
@@ -24,24 +23,25 @@ const LoginScreen = ({navigation, route}: any) => {
 
   const link = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
-  // URL 문자열을 파싱하여 파라미터 값을 추출
-  // const code = new URL(dococument.location.toString()).searchParams.get('code');
-
-  /* Kakao SDK로 디버그, 릴리즈 키 해시 확인
-import com.kakao.sdk.common.util.Utility
-
-var keyHash = Utility.getKeyHash(this)
-*/
-
+  
+  // 카카오 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
   const kakaoButtonPress = async () => {
-    // 카카오 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
-    // Alert.alert('카카오버튼 잘 작동');
     Linking.openURL(link);
+
+    const url: string = "http://localhost:8080/kakao/callback?code=9ca1up-AbgMQGXpCkpcFbrVvVPOyel2uyHI8g3Gdrf8IVdI-7v4RYZOPt_pvfdbpCvLDCwo9cpgAAAGKGFt9hQ";
+
+    const parsedUrl: URL = new URL(url);
+    const code: string | null = parsedUrl.searchParams.get('code');
+
+    if (code) {
+      console.log(code);  // 여기서 코드 값을 확인할 수 있어용~!
+    } else {
+      console.log('코드가 없어용 ㅠㅅㅠ');
+    }
   };
 
+  // 인스타 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
   const instaButtonPress = () => {
-    // 인스타 로그인 버튼 눌렀을 때 처리할 로직을 여기에 추가
-    // Alert.alert('인스타버튼 잘 작동');
     navigation.navigate('MainScreen');
   };
 
@@ -50,7 +50,6 @@ var keyHash = Utility.getKeyHash(this)
       source={require('../../Image/loginPage_background.png')}
       style={styles.container}>
       <View>
-        {/* <Text>{code}</Text> */}
         <LoginButton
           imageSource={kakaoImagePath}
           onPress={kakaoButtonPress}
