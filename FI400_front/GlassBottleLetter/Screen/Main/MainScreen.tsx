@@ -7,7 +7,7 @@ import BackpackMenu from '../../Component/BackpackMenu';
 const MainScreen = ({navigation}: any) => {
   return (
     <ImageBackground
-      source={require('../../Image/mainPage_background.png')}
+      source={require('../../Image/beach.png')}
       style={styles.backContainer}>
       <View style={styles.container}>
       <View style={styles.topLeft}>
