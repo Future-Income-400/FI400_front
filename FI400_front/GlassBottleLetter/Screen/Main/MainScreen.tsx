@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ImageBackground, Image } from 'react-native';
+import {View, StyleSheet, ImageBackground, Image} from 'react-native';
 import HamburgerMenu from '../../Component/HamburgerMenu';
 import BackpackMenu from '../../Component/BackpackMenu';
 
@@ -7,10 +7,10 @@ import BackpackMenu from '../../Component/BackpackMenu';
 const MainScreen = ({navigation}: any) => {
   return (
     <ImageBackground
-      source={require('../../Image/mainPage_background.png')}
+      source={require('../../Image/beach.png')}
       style={styles.backContainer}>
       <View style={styles.container}>
-      <View style={styles.topLeft}>
+        <View style={styles.topLeft}>
           <BackpackMenu navigation={navigation} />
         </View>
         <View style={styles.topRight}>
