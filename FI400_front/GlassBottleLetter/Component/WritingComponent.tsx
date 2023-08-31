@@ -1,4 +1,3 @@
-//편지 작성 화면
 import React, {useState} from 'react';
 import {
   View,
@@ -6,6 +5,7 @@ import {
   TouchableOpacity,
   Text,
   Keyboard,
+  ScrollView,
   StyleSheet,
 } from 'react-native';
 
@@ -27,13 +27,18 @@ const LetterWritingComponent: React.FC = () => {
       {/* 텍스트 입력란과 전송 버튼을 가로로 나란히 배치 */}
       <View style={styles.inputContainer}>
         {/* 텍스트 입력란 */}
-        <TextInput
-          multiline
-          placeholder="편지를 작성하세요..."
-          value={letter}
-          onChangeText={text => setLetter(text)}
-          style={styles.inputBox}
-        />
+        <ScrollView
+          contentContainerStyle={styles.scrollView}
+          keyboardShouldPersistTaps="handled">
+          <TextInput
+            multiline
+            placeholder="편지를 작성하세요..."
+            value={letter}
+            onChangeText={text => setLetter(text)}
+            style={[styles.inputBox, {marginLeft: 10, marginRight: 10}]}
+            underlineColorAndroid="transparent" // 밑줄 제거
+          />
+        </ScrollView>
 
         {/* 전송 버튼 */}
         <TouchableOpacity
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     backgroundColor: 'white',
     flexDirection: 'row', // 수평 방향으로 자식 컴포넌트 배치
-    alignItems: 'center', // 자식 컴포넌트를 수직 중앙 정렬
+    alignItems: 'flex-end', // 자식 컴포넌트를 수직 중앙 정렬
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 24, // 입력 상자와 버튼 컨테이너의 모양을 동그란 모양으로 만듭니다.
@@ -70,10 +75,13 @@ const styles = StyleSheet.create({
   sendButtonText: {
     color: 'white', // 전송 버튼 텍스트 색상
   },
+  scrollView: {
+    flexGrow: 1,
+  },
   inputBox: {
     flex: 1, // 남은 공간을 모두 채우도록 설정
-    height: 48, // 입력 상자의 높이를 설정합니다.
-    paddingHorizontal: 16,
+    fontSize: 16, // 글자 크기 조절
+    padding: 0, // 내부 패딩 제거
   },
 });
 
