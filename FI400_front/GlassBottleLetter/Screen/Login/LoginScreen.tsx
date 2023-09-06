@@ -10,11 +10,15 @@ import {
 import queryString from 'query-string';
 import WebView from 'react-native-webview';
 import jwt from 'jsonwebtoken';
+import KakaoLogins from '@react-native-seoul/kakao-login';
 
 // LoginScreen.
 const LoginScreen = ({navigation, route}: any) => {
   const [showWebView, setShowWebView] = useState(false);
   const [authorizationCode, setAuthorizationCode] = useState('');
+
+  // 카카오 SDK 초기화
+  // KakaoLogins.init('YOUR_KAKAO_APP_KEY');
 
   // 카카오 로그인 버튼 이미지 파일의 Raw 경로
   const kakaoImagePath =
@@ -38,27 +42,7 @@ const LoginScreen = ({navigation, route}: any) => {
     navigation.navigate('MainScreen');
   };
 
-  const handleWebViewNavigation = (navState: any) => {
-    // 웹뷰의 네비게이션 상태가 변경될 때 처리할 로직 추가
-    // navState에는 현재 URL 정보 등이 포함되어 있음.
-
-    // 인가 코드 추출
-    const parsedUrl = queryString.parseUrl(navState.url);
-    const code: string | null = (parsedUrl.query as { [key: string]: string | null }).code || null;
-
-    console.log(code);
-
-    if (code) {
-      // 인가 코드를 백엔드 API에 전송
-      sendAuthorizationCodeToBackend(code);
-
-      // Alert.alert('인가코드: \n' + code);
-
-      setAuthorizationCode(code);
-      setShowWebView(false); // 웹뷰 닫기
-    }
-  };
-
+  // 인가코드 백에게 전달하는 함수
   const sendAuthorizationCodeToBackend = async (code: string) => {
     try {
       const response = await fetch('http://localhost:8080/user/saveuser', {
@@ -80,6 +64,24 @@ const LoginScreen = ({navigation, route}: any) => {
     } catch (error) {
       // console.error('네트워크 오류:', error);
     }
+  };
+
+  const handleWebViewNavigation = (navState: any) => {
+    // 웹뷰의 네비게이션 상태가 변경될 때 처리할 로직 추가
+    // navState에는 현재 URL 정보 등이 포함되어 있음.
+
+    // 인가 코드 추출
+    const parsedUrl = queryString.parseUrl(navState.url);
+    const code: string | null = (parsedUrl.query as { [key: string]: string | null }).code || null;
+
+    if (code) {
+      // 인가 코드를 백엔드 API에 전송
+      sendAuthorizationCodeToBackend(code);
+      setAuthorizationCode(code);
+
+      setShowWebView(false); // 웹뷰 닫기
+    }
+
   };
 
   return (
