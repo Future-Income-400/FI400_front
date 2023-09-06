@@ -3,13 +3,16 @@ import {View, StyleSheet, ImageBackground, Image} from 'react-native';
 import HamburgerMenu from '../../Component/HamburgerMenu';
 import BackpackMenu from '../../Component/BackpackMenu';
 
+import GlassBottleAnimation from '../../Component/BeachAnimation'; // 애니메이션 컴포넌트 추가
+
 // MainScreen.
 const MainScreen = ({navigation}: any) => {
   return (
-    <ImageBackground
-      source={require('../../Image/beach.png')}
-      style={styles.backContainer}>
+    // <ImageBackground
+    //   source={require('../../Image/beach.png')}
+    //   style={styles.backContainer}>
       <View style={styles.container}>
+        <GlassBottleAnimation />
         <View style={styles.topLeft}>
           <BackpackMenu navigation={navigation} />
         </View>
@@ -17,7 +20,7 @@ const MainScreen = ({navigation}: any) => {
           <HamburgerMenu />
         </View>
       </View>
-    </ImageBackground>
+    // </ImageBackground>
   );
 };
 
