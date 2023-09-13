@@ -4,6 +4,7 @@ import HamburgerMenu from '../../Component/HamburgerMenu';
 import BackpackMenu from '../../Component/BackpackMenu';
 
 import GlassBottleAnimation from '../../Component/BeachAnimation'; // 애니메이션 컴포넌트 추가
+import WaveAnimation from '../../Component/WaveAnimation';
 
 // MainScreen.
 const MainScreen = ({navigation}: any) => {
@@ -12,7 +13,8 @@ const MainScreen = ({navigation}: any) => {
     //   source={require('../../Image/beach.png')}
     //   style={styles.backContainer}>
       <View style={styles.container}>
-        <GlassBottleAnimation />
+        {/* <GlassBottleAnimation /> */}
+        <WaveAnimation />
         <View style={styles.topLeft}>
           <BackpackMenu navigation={navigation} />
         </View>
