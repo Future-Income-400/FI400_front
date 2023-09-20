@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: 'blue',
     marginHorizontal: 15, // 점들 사이의 간격 조절
-    marginTop: 180,
+    marginTop: 200,
   },
 })
 
